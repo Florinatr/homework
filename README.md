@@ -6,3 +6,6 @@
 第二次作业：目录work1/placeholder
 
 第三次作业：目录writing_homework1
+
+第四次作业：目录work2_scudb_initial
+
