@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_77c0b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_77c0b.dir/build.make CMakeFiles/cmTC_77c0b.dir/build
+make[1]: Entering directory '/home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77c0b.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_77c0b.dir/CheckSymbolExists.c.o   -c /home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_77c0b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77c0b.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_77c0b.dir/CheckSymbolExists.c.o  -o cmTC_77c0b 
+CMakeFiles/cmTC_77c0b.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_77c0b.dir/build.make:97: recipe for target 'cmTC_77c0b' failed
+make[1]: *** [cmTC_77c0b] Error 1
+make[1]: Leaving directory '/home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_77c0b/fast' failed
+make: *** [cmTC_77c0b/fast] Error 2
+
+File /home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4dfb0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4dfb0.dir/build.make CMakeFiles/cmTC_4dfb0.dir/build
+make[1]: Entering directory '/home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4dfb0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4dfb0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4dfb0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4dfb0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_4dfb0.dir/CheckFunctionExists.c.o  -o cmTC_4dfb0 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_4dfb0.dir/build.make:97: recipe for target 'cmTC_4dfb0' failed
+make[1]: *** [cmTC_4dfb0] Error 1
+make[1]: Leaving directory '/home/florina/scudb_initial/scudb_initial/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_4dfb0/fast' failed
+make: *** [cmTC_4dfb0/fast] Error 2
+
+
